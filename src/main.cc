@@ -1,12 +1,15 @@
 #include<iostream>
+#include<vector>
 #include<allegro5/allegro.h>
 #include <allegro5/allegro_primitives.h>
 
 #include "block.hh"
+#include "environment.hh"
+
+
 
 int main()
 {
-	Block t;
 	int screen_width = 1400;
 	int screen_height = 900;
 	float FPS = static_cast<float>(60);
@@ -31,15 +34,18 @@ int main()
 	al_register_event_source(eventQueue, al_get_display_event_source(display));
 	al_register_event_source(eventQueue, al_get_keyboard_event_source());
 
+  Environment* environment = new Environment();
+
 	al_start_timer(timer);
-	for(int i = 0; i < 400; ++i)
+	for(int i = 0; i < cfg::settings::SIMULATION_LENGTH; ++i)
 	{
 		ALLEGRO_EVENT ev;
 		al_wait_for_event(eventQueue, &ev);
 		if(ev.type == ALLEGRO_EVENT_TIMER)
 		{
-			t.draw();
+      environment->update();
 			al_flip_display();
+
 			al_clear_to_color(al_map_rgb(50 + i / 2,250 - i / 2,30 + i / 2 ));
 		}
 		else if (ev.type == ALLEGRO_EVENT_KEY_DOWN)
