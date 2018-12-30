@@ -28,7 +28,7 @@ namespace cfg {
     const int SIMULATION_LENGTH = 600;
     const int SCREEN_WIDTH = 1960;
     const int SCREEN_HEIGHT = 1080;
-    const bool RECORDING = true;
+    const bool RECORDING = false;
   }
 };
 
