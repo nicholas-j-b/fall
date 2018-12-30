@@ -16,10 +16,15 @@ class Environment
 private:
   std::vector<Block> _blocks;
   std::vector<Stream> _streams;
+
+  double _r;
+  double _g;
+  double _b;
 public:
   Environment();
 
   void update();
+  ALLEGRO_COLOR get_next_background_colour();
 };
 
 #endif

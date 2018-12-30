@@ -38,3 +38,9 @@ unsigned int RandomGenerator::get_next_int()
   calculate_next();
   return static_cast<unsigned int>(_x);
 }
+
+double RandomGenerator::get_next_double()
+{
+  calculate_next();
+  return static_cast<double>(_x) / cfg::lcg::m;
+}

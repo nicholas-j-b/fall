@@ -21,19 +21,20 @@ private:
   double _velx;
   double _vely;
 
-  std::vector<Stream&>* _streams;
+  std::vector<Stream> _streams;
 
   int _size;
   ALLEGRO_COLOR _colour;
   RandomGenerator _rg;
 public:
-  Block(uint64_t, std::vector<Stream&>);
+  Block(uint64_t, std::vector<Stream>&);
 
   void draw();
   void params_to_ints();
 
   void update();
   void interact_stream();
+  bool is_on_screen();
 };
 
 #endif

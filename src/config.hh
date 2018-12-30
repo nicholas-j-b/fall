@@ -20,12 +20,15 @@ namespace cfg {
   };
 
   namespace physics {
-    const double g = .01;
+    const double g = -.01;
   };
 
   namespace settings {
-    const int NUMBER_OF_BLOCKS = 2000;
+    const int NUMBER_OF_BLOCKS = 100000;
     const int SIMULATION_LENGTH = 600;
+    const int SCREEN_WIDTH = 1960;
+    const int SCREEN_HEIGHT = 1080;
+    const bool RECORDING = true;
   }
 };
 

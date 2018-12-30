@@ -11,7 +11,7 @@ public:
   double _lower;
   double _power;
 
-  Stream(int, int, int);
+  Stream(double, double, double);
 };
 
 #endif
